@@ -4,16 +4,7 @@ Shared [Renovate](https://docs.renovatebot.com/) configuration inherited by all 
 
 ## Usage
 
-Repos inherit this config automatically via Renovate's [org-level inherited config](https://docs.renovatebot.com/config-presets/#organization-level-presets). No per-repo setup needed.
-
-If a repo needs to override or extend, add a `renovate.json`:
-
-```json
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>major/renovate-config:org-inherited-config"]
-}
-```
+Repos inherit this config automatically via Renovate's [org-level inherited config](https://docs.renovatebot.com/config-presets/#organization-level-presets). No per-repo `renovate.json` needed unless overriding specific rules.
 
 ## What's configured
 
@@ -28,3 +19,5 @@ If a repo needs to override or extend, add a `renovate.json`:
 - `Signed-off-by` trailer on all Renovate commits (`:gitSignOff`)
 - Python dependency updates grouped into a single PR, labeled `python`
 - Rust dependency updates grouped into a single PR, labeled `rust`
+- `Swatinem/rust-cache` grouped into "Rust CI actions"
+- `dtolnay/rust-toolchain` digest updates disabled (uses branch names, not tags)
