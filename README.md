@@ -22,3 +22,4 @@ Repos inherit this config automatically via Renovate's [org-level inherited conf
 - `Swatinem/rust-cache` grouped into "Rust CI actions"
 - `dtolnay/rust-toolchain` digest updates disabled (uses branch names, not tags)
 - Cargo dependencies use version ranges (`replace` strategy) instead of exact pinning
+- Git submodule references updated automatically

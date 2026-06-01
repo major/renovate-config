@@ -3,6 +3,9 @@
   "extends": ["config:best-practices", ":gitSignOff", "schedule:weekends"],
   "timezone": "America/Chicago",
   "platformAutomerge": false,
+  "git-submodules": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "description": "7-day cooldown for all updates",
