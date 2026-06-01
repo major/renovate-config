@@ -10,16 +10,7 @@
       "minimumReleaseAge": "3 days"
     },
     {
-      "description": "Auto-merge patch, minor, and digest updates after a 7-day soak",
-      "matchUpdateTypes": ["patch", "minor", "digest"],
-      "automerge": true,
-      "automergeType": "pr",
-      "platformAutomerge": true,
-      "minimumReleaseAge": "7 days"
-    },
-    {
-      "description": "Require manual review for major updates",
-      "matchUpdateTypes": ["major"],
+      "description": "Disable auto-merge for all updates",
       "automerge": false
     }
   ]
