@@ -35,6 +35,11 @@
       "matchPackageNames": ["dtolnay/rust-toolchain"],
       "matchUpdateTypes": ["digest"],
       "enabled": false
+    },
+    {
+      "description": "Use version ranges instead of pinning for Cargo dependencies",
+      "matchManagers": ["cargo"],
+      "rangeStrategy": "replace"
     }
   ]
 }
