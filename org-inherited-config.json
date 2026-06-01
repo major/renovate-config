@@ -1,17 +1,30 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:best-practices"],
+  "extends": ["config:best-practices", ":gitSignOff"],
   "schedule": ["before 3am on Monday"],
   "timezone": "America/Chicago",
+  "platformAutomerge": false,
   "packageRules": [
     {
-      "description": "Baseline 3-day cooldown for all updates",
+      "description": "7-day cooldown for all updates",
       "matchUpdateTypes": ["major", "minor", "patch"],
-      "minimumReleaseAge": "3 days"
+      "minimumReleaseAge": "7 days"
     },
     {
       "description": "Disable auto-merge for all updates",
       "automerge": false
+    },
+    {
+      "description": "Group all Python dependency updates",
+      "matchCategories": ["python"],
+      "groupName": "python dependencies",
+      "addLabels": ["python"]
+    },
+    {
+      "description": "Group all Rust dependency updates",
+      "matchCategories": ["rust"],
+      "groupName": "rust dependencies",
+      "addLabels": ["rust"]
     }
   ]
 }
