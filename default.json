@@ -43,6 +43,19 @@
       "description": "Use version ranges instead of pinning for Cargo dependencies",
       "matchManagers": ["cargo"],
       "rangeStrategy": "replace"
+    },
+    {
+      "description": "Group all Go dependency updates",
+      "matchCategories": ["golang"],
+      "groupName": "go dependencies",
+      "addLabels": ["go"]
+    },
+    {
+      "description": "Group Go toolchain updates separately",
+      "matchManagers": ["gomod"],
+      "matchDepNames": ["go"],
+      "groupName": "Go toolchain"
     }
-  ]
+  ],
+  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"]
 }
