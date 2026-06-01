@@ -19,7 +19,7 @@ If a repo needs to override or extend, add a `renovate.json`:
 
 **Base:** `config:best-practices` (includes `config:recommended`, Docker/GitHub Actions digest pinning, lockfile maintenance, semantic commits, and more).
 
-**Schedule:** Mondays before 3 AM (America/Chicago).
+**Schedule:** Weekends only (America/Chicago).
 
 **Rules:**
 
