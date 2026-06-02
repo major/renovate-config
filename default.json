@@ -2,56 +2,53 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:best-practices", ":gitSignOff", "schedule:weekends"],
   "timezone": "America/Chicago",
+  "automerge": false,
   "platformAutomerge": false,
   "git-submodules": {
     "enabled": true
   },
   "packageRules": [
     {
-      "description": "7-day cooldown for all updates",
+      "description": ["7-day cooldown for all updates"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "minimumReleaseAge": "7 days"
     },
     {
-      "description": "Disable auto-merge for all updates",
-      "automerge": false
-    },
-    {
-      "description": "Group all Python dependency updates",
+      "description": ["Group all Python dependency updates"],
       "matchCategories": ["python"],
       "groupName": "python dependencies",
       "addLabels": ["python"]
     },
     {
-      "description": "Group all Rust dependency updates",
+      "description": ["Group all Rust dependency updates"],
       "matchCategories": ["rust"],
       "groupName": "rust dependencies",
       "addLabels": ["rust"]
     },
     {
-      "description": "Group Rust CI action updates",
+      "description": ["Group Rust CI action updates"],
       "matchPackageNames": ["Swatinem/rust-cache"],
       "groupName": "Rust CI actions"
     },
     {
-      "description": "Disable digest updates for dtolnay/rust-toolchain (uses branch names, not tags)",
+      "description": ["Disable digest updates for dtolnay/rust-toolchain (uses branch names, not tags)"],
       "matchPackageNames": ["dtolnay/rust-toolchain"],
       "matchUpdateTypes": ["digest"],
       "enabled": false
     },
     {
-      "description": "Use version ranges instead of pinning for Cargo dependencies",
+      "description": ["Use version ranges instead of pinning for Cargo dependencies"],
       "matchManagers": ["cargo"],
       "rangeStrategy": "replace"
     },
     {
-      "description": "Group all Go dependency updates",
+      "description": ["Group all Go dependency updates"],
       "matchCategories": ["golang"],
       "groupName": "go dependencies",
       "addLabels": ["go"]
     },
     {
-      "description": "Group Go toolchain updates separately",
+      "description": ["Group Go toolchain updates separately"],
       "matchManagers": ["gomod"],
       "matchDepNames": ["go"],
       "groupName": "Go toolchain"
