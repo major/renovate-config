@@ -19,7 +19,9 @@ Repos inherit this config automatically via Renovate's [org-level inherited conf
 - `Signed-off-by` trailer on all Renovate commits (`:gitSignOff`)
 - Python dependency updates grouped into a single PR, labeled `python`
 - Rust dependency updates grouped into a single PR, labeled `rust`
-- `Swatinem/rust-cache` grouped into "Rust CI actions"
+- GitHub Actions updates grouped into a single PR
+- Container image updates (Dockerfile, Compose, etc.) grouped into a single PR
+- `Swatinem/rust-cache` grouped into "Rust CI actions" (its rule comes after the generic GitHub Actions rule, so it overrides that group)
 - `dtolnay/rust-toolchain` digest updates disabled (uses branch names, not tags)
 - Cargo dependencies use version ranges (`replace` strategy) instead of exact pinning
 - Go dependency updates grouped into a single PR, labeled `go`

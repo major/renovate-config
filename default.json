@@ -26,6 +26,16 @@
       "addLabels": ["rust"]
     },
     {
+      "description": ["Group all GitHub Actions updates"],
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions"
+    },
+    {
+      "description": ["Group all container image updates"],
+      "matchCategories": ["docker"],
+      "groupName": "container images"
+    },
+    {
       "description": ["Group Rust CI action updates"],
       "matchPackageNames": ["Swatinem/rust-cache"],
       "groupName": "Rust CI actions"
